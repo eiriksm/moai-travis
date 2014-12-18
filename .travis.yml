@@ -1,12 +1,12 @@
 language: erlang
 
 before_install:
-  - sudo apt-get install lua5.1 freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev libxxf86vm-dev -y
+  - sudo apt-get install libc6 lua5.1 freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev libxxf86vm-dev -y
   - git clone https://github.com/Olivine-Labs/busted
   - wget https://github.com/moai/moai-dev/releases/download/Version-1.5.2-binary-desktop/moai_desktop_1.5.2.zip
   - unzip moai_desktop_1.5.2.zip
   - chmod u+x moaidist/linux/moai
 
 script:
-  - moaidist/linux/moai busted/bin/busted -l moaidist/linux/moai tests
+  - moaidist/linux/moai busted/bin/busted tests
 
