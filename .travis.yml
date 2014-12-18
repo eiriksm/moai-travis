@@ -1,4 +1,4 @@
-language: erlang
+language: c 
 
 before_install:
   - sudo apt-get install build-essential lua5.1 freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev libxxf86vm-dev -y
