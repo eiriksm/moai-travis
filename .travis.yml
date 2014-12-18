@@ -1,12 +1,10 @@
 language: c 
 
 before_install:
-  - sudo apt-get install build-essential lua5.1 freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev libxxf86vm-dev -y
+  - sudo apt-get install build-essential lua5.1 freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev libxxf86vm-dev luarocks -y
   - git clone https://github.com/Olivine-Labs/busted
-  - wget https://github.com/moai/moai-dev/releases/download/Version-1.5.2-binary-desktop/moai_desktop_1.5.2.zip
-  - unzip moai_desktop_1.5.2.zip
-  - chmod u+x moaidist/linux/moai
+  - sudo luarocks install busted
 
 script:
-  - moaidist/linux/moai busted/bin/busted tests
+  - moai_linux busted/bin/busted tests
 
