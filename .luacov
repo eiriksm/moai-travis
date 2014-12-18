@@ -1,0 +1,34 @@
+-- @class module
+-- @name luacov.defaults
+return {
+
+  ["statsfile"] = "luacov.stats.out",
+  ["reportfile"] = "luacov.report.out",
+
+  ["savestepsize"] = 100,
+
+  -- Run reporter on completion? (won't work for ticks)
+  runreport = false,
+
+  deletestats = false,
+  
+  codefromstrings = false,
+
+  -- Patterns for files to include when reporting
+  -- all will be included if nothing is listed
+  -- (exclude overrules include, do not include
+  -- the .lua extension, path separator is always '/')
+  ["include"] = {
+    "adder",
+  },
+
+  -- Patterns for files to exclude when reporting
+  -- all will be included if nothing is listed
+  -- (exclude overrules include, do not include
+  -- the .lua extension, path separator is always '/')
+  ["exclude"] = {
+    "spec$"
+  },
+
+
+}
