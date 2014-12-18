@@ -1,0 +1,22 @@
+language: erlang
+
+env:
+  global:
+    - LUAROCKS_BASE=luarocks-2.0.13
+
+before_install:
+  - sudo apt-get install lua5.1
+  - wget http://luarocks.org/releases/$LUAROCKS_BASE.tar.gz
+  - tar zxvpf $LUAROCKS_BASE.tar.gz
+  - cd $LUAROCKS_BASE
+  - ./configure
+  - sudo make
+  - sudo make install
+  - cd $TRAVIS_BUILD_DIR
+  - luarocks install busted
+  - wget https://github.com/moai/moai-dev/releases/download/Version-1.5.2-binary-desktop/moai_desktop_1.5.2.zip
+  - unzip moai_desktop_1.5.2.zip
+
+script:
+  busted -l moaidist/linux/moai tests
+
