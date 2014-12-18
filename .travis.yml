@@ -6,5 +6,5 @@ before_install:
   - sudo luarocks install busted
 
 script:
-  - moai_linux busted/bin/busted tests
+  - ./moai_linux busted/bin/busted tests
 
